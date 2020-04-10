@@ -1,0 +1,30 @@
+{
+    "name": "NetSkip",
+    "description": "Automatically Skips Intro in Netflix",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": {
+            "32": "images/logo.png"
+        },
+        "default_title": "NetSkip",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.netflix.com/*"
+            ],
+            "all_frames": true,
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
